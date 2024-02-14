@@ -1,15 +1,21 @@
 <template>
   <app-aside></app-aside>
+
+  <div>
+    <app-navbar></app-navbar>
+  </div>
 </template>
 
 <script>
 import AppAside from "./components/AppAside.vue";
+import AppNavbar from "./components/AppNavbar.vue";
 // import fetchData from "./data";
 
 export default {
   name: "App",
   components: {
     AppAside,
+    AppNavbar,
   },
 };
 
@@ -60,6 +66,7 @@ body {
 
 /*==================== APP ====================*/
 #app {
+  display: flex;
   background-color: var(--body-background-color-gray);
   border-radius: 40px;
   margin: 70px;
