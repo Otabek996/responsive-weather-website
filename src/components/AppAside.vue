@@ -38,7 +38,7 @@
   background-color: var(--body-background-color-white);
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
-  padding: 50px;
+  padding: 40px;
 }
 
 .aside-body__top {
