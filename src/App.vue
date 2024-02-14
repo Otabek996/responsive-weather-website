@@ -4,7 +4,7 @@
 
 <script>
 import AppAside from "./components/AppAside.vue";
-import fetchData from "./data";
+// import fetchData from "./data";
 
 export default {
   name: "App",
@@ -13,7 +13,7 @@ export default {
   },
 };
 
-fetchData();
+// fetchData();
 </script>
 
 <style>
@@ -29,6 +29,7 @@ fetchData();
   --text-color-black: #000000;
   --text-color-gray: #aeaeae;
   --active-btn-background-color-black: #000000;
+  --border-color-gray: #f6f6f8;
 
   /*========== Font and typography ==========*/
   --font-family-inconsolata: "Inconsolata", sans-serif;
@@ -45,5 +46,22 @@ fetchData();
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body {
+  font-family: var(--font-family-inconsolata);
+  font-optical-sizing: auto;
+  font-weight: var(--font-weight-regular);
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  color: var(--text-color-black);
+  background-color: var(--body-background-color-grayer);
+}
+
+/*==================== APP ====================*/
+#app {
+  background-color: var(--body-background-color-gray);
+  border-radius: 40px;
+  margin: 70px;
 }
 </style>
