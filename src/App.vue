@@ -4,6 +4,7 @@
 
 <script>
 import AppAside from "./components/AppAside.vue";
+import fetchData from "./data";
 
 export default {
   name: "App",
@@ -11,6 +12,8 @@ export default {
     AppAside,
   },
 };
+
+fetchData();
 </script>
 
 <style>
