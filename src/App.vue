@@ -3,12 +3,17 @@
 
   <div class="wrapper">
     <app-navbar></app-navbar>
+
+    <main class="main">
+      <app-card></app-card>
+    </main>
   </div>
 </template>
 
 <script>
 import AppAside from "./components/AppAside.vue";
 import AppNavbar from "./components/AppNavbar.vue";
+import AppCard from "./components/AppCard.vue";
 // import fetchData from "./data";
 
 export default {
@@ -16,6 +21,7 @@ export default {
   components: {
     AppAside,
     AppNavbar,
+    AppCard,
   },
 };
 
@@ -76,5 +82,9 @@ body {
 
 .wrapper {
   width: 100%;
+}
+
+.main {
+  padding: 0 40px;
 }
 </style>
