@@ -1,7 +1,7 @@
 <template>
   <app-aside></app-aside>
 
-  <div>
+  <div class="wrapper">
     <app-navbar></app-navbar>
   </div>
 </template>
@@ -32,9 +32,11 @@ export default {
   --body-background-color-white: #ffffff;
   --body-background-color-gray: #f6f6f8;
   --body-background-color-grayer: #d6d7da;
+  --text-color-white: #ffffff;
   --text-color-black: #000000;
   --text-color-gray: #aeaeae;
   --active-btn-background-color-black: #000000;
+  --nonactive-btn-background-color-white: #ffffff;
   --border-color-gray: #f6f6f8;
 
   /*========== Font and typography ==========*/
@@ -70,5 +72,9 @@ body {
   background-color: var(--body-background-color-gray);
   border-radius: 40px;
   margin: 70px;
+}
+
+.wrapper {
+  width: 100%;
 }
 </style>
