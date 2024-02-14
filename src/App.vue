@@ -1,8 +1,25 @@
+<template>
+  <app-aside></app-aside>
+</template>
+
 <script>
+import AppAside from "./components/AppAside.vue";
+
 export default {
   name: "App",
-  components: {},
+  components: {
+    AppAside,
+  },
 };
 </script>
 
-<style></style>
+<style>
+/*==================== GOOGLE FONTS ====================*/
+/*==================== VARIABLES CSS ====================*/
+/*==================== BASE ====================*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+</style>
