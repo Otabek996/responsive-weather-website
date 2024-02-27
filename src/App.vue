@@ -1,5 +1,5 @@
 <template>
-  <app-aside></app-aside>
+  <app-aside :asideCity="city"></app-aside>
 
   <div class="wrapper">
     <app-navbar></app-navbar>
@@ -23,7 +23,7 @@ import AppAside from "./components/AppAside.vue";
 import AppNavbar from "./components/AppNavbar.vue";
 import AppCard from "./components/AppCard.vue";
 import AppBox from "./components/AppBox.vue";
-// import fetchData from "./data";
+import axios from "axios";
 
 export default {
   name: "App",
@@ -33,9 +33,30 @@ export default {
     AppCard,
     AppBox,
   },
-};
+  city: "",
 
-// fetchData();
+  data() {
+    return {
+      city: "",
+    };
+  },
+
+  mounted() {
+    this.getWeather();
+  },
+
+  methods: {
+    getWeather() {
+      axios
+        .get(
+          "http://api.weatherapi.com/v1/forecast.json?key=8b684208e7b74e8592c102618231904&q=Tashkent&days=1&aqi=yes&alerts=no"
+        )
+        .then((res) => {
+          this.city = res.data.location.name;
+        });
+    },
+  },
+};
 </script>
 
 <style>

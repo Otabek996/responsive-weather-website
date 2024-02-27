@@ -25,10 +25,16 @@
     </div>
 
     <div class="aside-footer">
-      <p class="aside-city">Tashkent</p>
+      <p class="aside-city">{{ asideCity }}</p>
     </div>
   </aside>
 </template>
+
+<script>
+export default {
+  props: ["asideCity"],
+};
+</script>
 
 <style scoped>
 .aside {
