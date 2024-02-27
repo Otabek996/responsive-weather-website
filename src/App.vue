@@ -6,6 +6,14 @@
 
     <main class="main">
       <app-card></app-card>
+
+      <h2 class="main-title">Today's Highlights</h2>
+
+      <div class="box-wrapper">
+        <app-box></app-box>
+        <app-box></app-box>
+        <app-box></app-box>
+      </div>
     </main>
   </div>
 </template>
@@ -14,6 +22,7 @@
 import AppAside from "./components/AppAside.vue";
 import AppNavbar from "./components/AppNavbar.vue";
 import AppCard from "./components/AppCard.vue";
+import AppBox from "./components/AppBox.vue";
 // import fetchData from "./data";
 
 export default {
@@ -22,6 +31,7 @@ export default {
     AppAside,
     AppNavbar,
     AppCard,
+    AppBox,
   },
 };
 
@@ -86,5 +96,15 @@ body {
 
 .main {
   padding: 0 40px;
+}
+
+.main-title {
+  margin: 50px 0 20px 0;
+}
+
+.box-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 </style>
