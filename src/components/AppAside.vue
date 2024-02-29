@@ -1,6 +1,18 @@
 <template>
   <aside class="aside">
-    <div class="aside-header"></div>
+    <div class="aside-header">
+      <div class="input-border">
+        <i class="ri-search-line"></i>
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Search for places ..."
+        />
+      </div>
+      <button class="find-location">
+        <i class="ri-user-location-line"></i>
+      </button>
+    </div>
 
     <div class="aside-body">
       <div class="aside-body__top">
@@ -54,6 +66,46 @@ export default {
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
   padding: 40px;
+}
+
+.aside-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-border {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: border-color 0.2s linear;
+}
+
+.input-border:hover {
+  border-color: red;
+}
+
+.search-input {
+  border: none;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.find-location {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: border-color 0.2s linear;
+  padding: 9px 11px;
+  cursor: pointer;
+}
+
+.find-location:hover {
+  border-color: red;
 }
 
 .aside-body__top {
