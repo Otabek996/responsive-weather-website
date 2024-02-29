@@ -15,11 +15,11 @@
 
       <div class="aside-body__bottom">
         <div class="condition">
-          <img class="condition-icon" src="" alt="Condition icon" />
+          <i class="ri-cloud-line"></i>
           <p class="condition-text">{{ asideText }}</p>
         </div>
         <div class="condition">
-          <img class="condition-icon" src="" alt="Condition icon" />
+          <i class="ri-rainy-line"></i>
           <p class="condition-text">Rain - {{ asideRain }}%</p>
         </div>
       </div>
