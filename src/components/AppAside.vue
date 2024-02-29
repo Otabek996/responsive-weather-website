@@ -4,22 +4,23 @@
 
     <div class="aside-body">
       <div class="aside-body__top">
-        <img class="aside-icon" src="" alt="Weather icon" />
-        <p class="aside-temperature">12°C</p>
+        <img class="aside-icon" :src="asideIcon" alt="Weather icon" />
+        <p class="aside-temperature">{{ asideTemp }}°C</p>
         <p class="aside-text">
-          <span class="aside-text__day">Monday</span>,
-          <span class="aside-text__time">16:00</span>
+          <span class="aside-text__day">{{ asideDate }}</span
+          >,
+          <span class="aside-text__time">{{ asideTime }}</span>
         </p>
       </div>
 
       <div class="aside-body__bottom">
         <div class="condition">
           <img class="condition-icon" src="" alt="Condition icon" />
-          <p class="condition-text">Mostly cloudy</p>
+          <p class="condition-text">{{ asideText }}</p>
         </div>
         <div class="condition">
           <img class="condition-icon" src="" alt="Condition icon" />
-          <p class="condition-text">Rain - 30%</p>
+          <p class="condition-text">Rain - {{ asideRain }}%</p>
         </div>
       </div>
     </div>
@@ -32,7 +33,15 @@
 
 <script>
 export default {
-  props: ["asideCity"],
+  props: [
+    "asideIcon",
+    "asideTemp",
+    "asideDate",
+    "asideTime",
+    "asideText",
+    "asideRain",
+    "asideCity",
+  ],
 };
 </script>
 

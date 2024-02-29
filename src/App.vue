@@ -1,5 +1,13 @@
 <template>
-  <app-aside :asideCity="city"></app-aside>
+  <app-aside
+    :asideIcon="icon"
+    :asideTemp="tempC"
+    :asideDate="date"
+    :asideTime="time"
+    :asideText="text"
+    :asideRain="rain"
+    :asideCity="city"
+  ></app-aside>
 
   <div class="wrapper">
     <app-navbar></app-navbar>
@@ -33,6 +41,12 @@ export default {
     AppCard,
     AppBox,
   },
+  icon: "",
+  tempC: "",
+  date: "",
+  time: "",
+  text: "",
+  rain: "",
   city: "",
 
   data() {
@@ -52,7 +66,14 @@ export default {
           "http://api.weatherapi.com/v1/forecast.json?key=8b684208e7b74e8592c102618231904&q=Tashkent&days=1&aqi=yes&alerts=no"
         )
         .then((res) => {
+          this.icon = res.data.current.condition.icon;
+          this.tempC = res.data.current.temp_c;
+          this.date = res.data.current.last_updated.split(" ")[0];
+          this.time = res.data.current.last_updated.split(" ")[1];
+          this.text = res.data.current.condition.text;
+          this.rain = res.data.forecast.forecastday[0].day.daily_chance_of_rain;
           this.city = res.data.location.name;
+          console.log(this.rain);
         });
     },
   },
