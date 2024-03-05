@@ -50,6 +50,8 @@ export default {
   rain: "",
   city: "",
   country: "",
+  epochTimeToConvert: null,
+  convertedDate: null,
 
   data() {
     return {
@@ -65,7 +67,7 @@ export default {
     getWeather() {
       axios
         .get(
-          "http://api.weatherapi.com/v1/forecast.json?key=8b684208e7b74e8592c102618231904&q=Tashkent&days=1&aqi=yes&alerts=no"
+          "http://api.weatherapi.com/v1/forecast.json?key=8b684208e7b74e8592c102618231904&q=Tashkent&days=7&aqi=yes&alerts=no"
         )
         .then((res) => {
           this.icon = res.data.current.condition.icon;
@@ -76,7 +78,11 @@ export default {
           this.rain = res.data.forecast.forecastday[0].day.daily_chance_of_rain;
           this.city = res.data.location.name;
           this.country = res.data.location.country;
-          console.log(res);
+
+          this.epochTimeToConvert = res.data.forecast.forecastday[0].date_epoch;
+          this.convertedDate = new Date(this.epochTimeToConvert * 1000);
+
+          console.log(this.convertedDate);
         });
     },
   },
