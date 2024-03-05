@@ -7,6 +7,7 @@
     :asideText="text"
     :asideRain="rain"
     :asideCity="city"
+    :asideCountry="country"
   ></app-aside>
 
   <div class="wrapper">
@@ -48,6 +49,7 @@ export default {
   text: "",
   rain: "",
   city: "",
+  country: "",
 
   data() {
     return {
@@ -73,7 +75,8 @@ export default {
           this.text = res.data.current.condition.text;
           this.rain = res.data.forecast.forecastday[0].day.daily_chance_of_rain;
           this.city = res.data.location.name;
-          console.log(this.rain);
+          this.country = res.data.location.country;
+          console.log(res);
         });
     },
   },

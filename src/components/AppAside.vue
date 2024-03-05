@@ -38,7 +38,7 @@
     </div>
 
     <div class="aside-footer">
-      <p class="aside-city">{{ asideCity }}</p>
+      <p class="aside-city">{{ asideCity }}, {{ asideCountry }}</p>
     </div>
   </aside>
 </template>
@@ -53,6 +53,7 @@ export default {
     "asideText",
     "asideRain",
     "asideCity",
+    "asideCountry",
   ],
 };
 </script>
