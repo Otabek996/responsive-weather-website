@@ -5,15 +5,15 @@
     </p>
     <img class="card-img" src="" alt="Sun" />
     <p class="card-temperature">
-      <span class="card-temperature__morning">15°</span>
-      <span class="card-temperature__evening">-3°</span>
+      <span class="card-temperature__morning">{{ Math.ceil(maxTemp) }}°</span>
+      <span class="card-temperature__evening">{{ Math.ceil(minTemp) }}°</span>
     </p>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["dayOfWeek"],
+  props: ["dayOfWeek", "maxTemp", "minTemp"],
 };
 </script>
 

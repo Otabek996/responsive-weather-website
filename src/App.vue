@@ -18,6 +18,8 @@
         v-for="(day, index) in forecastDays"
         :key="index"
         :dayOfWeek="new Date(day.date_epoch * 1000).getDay()"
+        :maxTemp="day.day.maxtemp_c"
+        :minTemp="day.day.mintemp_c"
       ></app-card>
 
       <h2 class="main-title">Today's Highlights</h2>
@@ -84,7 +86,7 @@ export default {
 
           this.forecastDays = res.data.forecast.forecastday;
 
-          console.log();
+          console.log(this.forecastDays);
         });
     },
   },
