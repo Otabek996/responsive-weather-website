@@ -25,6 +25,7 @@
           :minTempC="day.day.mintemp_c"
           :maxTempF="day.day.maxtemp_f"
           :minTempF="day.day.mintemp_f"
+          :usedTempValue="usedTemp"
         ></app-card>
       </div>
 
