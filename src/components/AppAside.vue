@@ -8,9 +8,10 @@
             class="search-input"
             type="text"
             placeholder="Search for places ..."
+            v-model="inputText"
           />
         </div>
-        <button class="find-location" type="button">
+        <button class="find-location" type="button" @click="getTextFromInput">
           <i class="ri-crosshair-line"></i>
         </button>
       </form>
@@ -76,6 +77,7 @@ export default {
 
   data() {
     return {
+      inputText: "",
       currentTime: "",
     };
   },
@@ -91,6 +93,11 @@ export default {
       const hours = now.getHours().toString().padStart(2, "0");
       const minutes = now.getMinutes().toString().padStart(2, "0");
       this.currentTime = `${hours}:${minutes}`;
+    },
+
+    getTextFromInput() {
+      this.$emit("information-event", this.inputText);
+      this.inputText = "";
     },
   },
 };

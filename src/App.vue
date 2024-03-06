@@ -1,5 +1,6 @@
 <template>
   <app-aside
+    @information-event="handleInformation"
     :asideIcon="icon"
     :asideTempC="tempC"
     :asideTempF="tempF"
@@ -73,6 +74,7 @@ export default {
 
   data() {
     return {
+      receivedInformation: "Tashkent",
       icon: "",
       tempC: "",
       tempF: "",
@@ -124,6 +126,11 @@ export default {
       this.usedTemp = "°F";
       this.isActiveF = true;
       this.isActiveC = false;
+    },
+
+    handleInformation(info) {
+      this.receivedInformation = info;
+      console.log(this.receivedInformation);
     },
   },
 };
