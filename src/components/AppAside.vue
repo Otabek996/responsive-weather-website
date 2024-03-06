@@ -24,7 +24,17 @@
           {{ Math.ceil(asideTempF) }}{{ usedTempValue }}
         </p>
         <p class="aside-text">
-          <span class="aside-text__day">{{ asideDate }}</span
+          <span class="aside-text__day">{{
+            [
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+            ][asideDate]
+          }}</span
           >,
           <span class="aside-text__time">{{ asideTime }}</span>
         </p>
