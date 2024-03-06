@@ -1,7 +1,9 @@
 <template>
   <app-aside
     :asideIcon="icon"
-    :asideTemp="tempC"
+    :asideTempC="tempC"
+    :asideTempF="tempF"
+    :usedTempValue="usedTemp"
     :asideDate="date"
     :asideTime="time"
     :asideText="text"
@@ -54,6 +56,7 @@ export default {
   },
   icon: "",
   tempC: "",
+  tempF: "",
   date: "",
   time: "",
   text: "",
@@ -61,11 +64,13 @@ export default {
   city: "",
   country: "",
   forecastDays: null,
+  usedTemp: "°C",
 
   data() {
     return {
       icon: "",
       tempC: "",
+      tempF: "",
       date: "",
       time: "",
       text: "",
@@ -73,6 +78,7 @@ export default {
       city: "",
       country: "",
       forecastDays: null,
+      usedTemp: "°C",
     };
   },
 
@@ -89,6 +95,7 @@ export default {
         .then((res) => {
           this.icon = res.data.current.condition.icon;
           this.tempC = res.data.current.temp_c;
+          this.tempF = res.data.current.temp_f;
           this.date = res.data.current.last_updated.split(" ")[0];
           this.time = res.data.current.last_updated.split(" ")[1];
           this.text = res.data.current.condition.text;
@@ -98,7 +105,7 @@ export default {
 
           this.forecastDays = res.data.forecast.forecastday;
 
-          console.log(this.forecastDays);
+          console.log(this.tempF);
         });
     },
   },

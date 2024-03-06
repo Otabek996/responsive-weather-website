@@ -17,7 +17,12 @@
     <div class="aside-body">
       <div class="aside-body__top">
         <img class="aside-icon" :src="asideIcon" alt="Weather icon" />
-        <p class="aside-temperature">{{ asideTemp }}°C</p>
+        <p class="aside-temperature" v-if="usedTempValue === '°C'">
+          {{ asideTempC }}{{ usedTempValue }}
+        </p>
+        <p class="aside-temperature" v-if="usedTempValue === '°F'">
+          {{ Math.ceil(asideTempF) }}{{ usedTempValue }}
+        </p>
         <p class="aside-text">
           <span class="aside-text__day">{{ asideDate }}</span
           >,
@@ -47,7 +52,9 @@
 export default {
   props: [
     "asideIcon",
-    "asideTemp",
+    "asideTempC",
+    "asideTempF",
+    "usedTempValue",
     "asideDate",
     "asideTime",
     "asideText",
