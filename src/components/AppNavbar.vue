@@ -5,15 +5,33 @@
     </div>
 
     <div class="navbar-right">
-      <button class="navbar-button active" v-on:click="onClickC">°C</button>
-      <button class="navbar-button" v-on:click="onClickF">°F</button>
+      <button
+        class="navbar-button"
+        :class="{ active: isActiveValueC }"
+        v-on:click="onClickC"
+      >
+        °C
+      </button>
+      <button
+        class="navbar-button"
+        :class="{ active: isActiveValueF }"
+        v-on:click="onClickF"
+      >
+        °F
+      </button>
     </div>
   </nav>
 </template>
 
 <script>
 export default {
-  props: ["onClickC", "onClickF"],
+  props: [
+    "onClickC",
+    "onClickF",
+    "usedTempValue",
+    "isActiveValueC",
+    "isActiveValueF",
+  ],
 };
 </script>
 

@@ -15,6 +15,9 @@
     <app-navbar
       :onClickC="emitMutationC"
       :onClickF="emitMutationF"
+      :usedTempValue="usedTemp"
+      :isActiveValueC="isActiveC"
+      :isActiveValueF="isActiveF"
     ></app-navbar>
 
     <main class="main">
@@ -80,6 +83,8 @@ export default {
       country: "",
       forecastDays: null,
       usedTemp: "°C",
+      isActiveC: true,
+      isActiveF: false,
     };
   },
 
@@ -111,10 +116,14 @@ export default {
 
     emitMutationC() {
       this.usedTemp = "°C";
+      this.isActiveC = true;
+      this.isActiveF = false;
     },
 
     emitMutationF() {
       this.usedTemp = "°F";
+      this.isActiveF = true;
+      this.isActiveC = false;
     },
   },
 };
