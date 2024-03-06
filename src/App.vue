@@ -19,8 +19,10 @@
           v-for="(day, index) in forecastDays"
           :key="index"
           :dayOfWeek="new Date(day.date_epoch * 1000).getDay()"
-          :maxTemp="day.day.maxtemp_c"
-          :minTemp="day.day.mintemp_c"
+          :maxTempC="day.day.maxtemp_c"
+          :minTempC="day.day.mintemp_c"
+          :maxTempF="day.day.maxtemp_f"
+          :minTempF="day.day.mintemp_f"
         ></app-card>
       </div>
 
