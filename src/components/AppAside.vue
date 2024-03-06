@@ -1,17 +1,19 @@
 <template>
   <aside class="aside">
     <div class="aside-header">
-      <div class="input-border">
-        <i class="ri-search-line"></i>
-        <input
-          class="search-input"
-          type="text"
-          placeholder="Search for places ..."
-        />
-      </div>
-      <button class="find-location">
-        <i class="ri-user-location-line"></i>
-      </button>
+      <form class="aside-header-form">
+        <div class="input-border">
+          <i class="ri-search-line"></i>
+          <input
+            class="search-input"
+            type="text"
+            placeholder="Search for places ..."
+          />
+        </div>
+        <button class="find-location" type="button">
+          <i class="ri-crosshair-line"></i>
+        </button>
+      </form>
     </div>
 
     <div class="aside-body">
@@ -105,7 +107,7 @@ export default {
   padding: 40px;
 }
 
-.aside-header {
+.aside-header-form {
   display: flex;
   align-items: center;
   gap: 10px;
