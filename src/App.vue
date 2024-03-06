@@ -12,7 +12,10 @@
   ></app-aside>
 
   <div class="wrapper">
-    <app-navbar></app-navbar>
+    <app-navbar
+      :onClickC="emitMutationC"
+      :onClickF="emitMutationF"
+    ></app-navbar>
 
     <main class="main">
       <div class="card-wrapper">
@@ -63,7 +66,7 @@ export default {
   city: "",
   country: "",
   forecastDays: null,
-  usedTemp: "°C",
+  usedTemp: "",
 
   data() {
     return {
@@ -104,6 +107,14 @@ export default {
 
           console.log(res);
         });
+    },
+
+    emitMutationC() {
+      this.usedTemp = "°C";
+    },
+
+    emitMutationF() {
+      this.usedTemp = "°F";
     },
   },
 };
