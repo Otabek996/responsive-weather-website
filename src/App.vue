@@ -64,7 +64,15 @@ export default {
 
   data() {
     return {
+      icon: "",
+      tempC: "",
+      date: "",
+      time: "",
+      text: "",
+      rain: "",
       city: "",
+      country: "",
+      forecastDays: null,
     };
   },
 
