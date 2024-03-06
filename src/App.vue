@@ -14,13 +14,15 @@
     <app-navbar></app-navbar>
 
     <main class="main">
-      <app-card
-        v-for="(day, index) in forecastDays"
-        :key="index"
-        :dayOfWeek="new Date(day.date_epoch * 1000).getDay()"
-        :maxTemp="day.day.maxtemp_c"
-        :minTemp="day.day.mintemp_c"
-      ></app-card>
+      <div class="card-wrapper">
+        <app-card
+          v-for="(day, index) in forecastDays"
+          :key="index"
+          :dayOfWeek="new Date(day.date_epoch * 1000).getDay()"
+          :maxTemp="day.day.maxtemp_c"
+          :minTemp="day.day.mintemp_c"
+        ></app-card>
+      </div>
 
       <h2 class="main-title">Today's Highlights</h2>
 
@@ -155,6 +157,12 @@ body {
 
 .main-title {
   margin: 50px 0 20px 0;
+}
+
+.card-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .box-wrapper {
