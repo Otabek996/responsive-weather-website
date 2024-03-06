@@ -14,7 +14,11 @@
     <app-navbar></app-navbar>
 
     <main class="main">
-      <app-card></app-card>
+      <app-card
+        v-for="(day, index) in forecastDays"
+        :key="index"
+        :dayOfWeek="new Date(day.date_epoch * 1000).getDay()"
+      ></app-card>
 
       <h2 class="main-title">Today's Highlights</h2>
 
@@ -50,8 +54,7 @@ export default {
   rain: "",
   city: "",
   country: "",
-  epochTimeToConvert: null,
-  convertedDate: null,
+  forecastDays: null,
 
   data() {
     return {
@@ -79,10 +82,9 @@ export default {
           this.city = res.data.location.name;
           this.country = res.data.location.country;
 
-          this.epochTimeToConvert = res.data.forecast.forecastday[0].date_epoch;
-          this.convertedDate = new Date(this.epochTimeToConvert * 1000);
+          this.forecastDays = res.data.forecast.forecastday;
 
-          console.log(this.convertedDate);
+          console.log();
         });
     },
   },

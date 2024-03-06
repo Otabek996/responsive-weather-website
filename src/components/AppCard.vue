@@ -1,6 +1,8 @@
 <template>
   <div class="card">
-    <p class="card-title">Sun</p>
+    <p class="card-title">
+      {{ ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][dayOfWeek] }}
+    </p>
     <img class="card-img" src="" alt="Sun" />
     <p class="card-temperature">
       <span class="card-temperature__morning">15°</span>
@@ -8,6 +10,12 @@
     </p>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["dayOfWeek"],
+};
+</script>
 
 <style scoped>
 .card {
