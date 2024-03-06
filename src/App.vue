@@ -5,7 +5,6 @@
     :asideTempF="tempF"
     :usedTempValue="usedTemp"
     :asideDate="new Date(date * 1000).getDay()"
-    :asideTime="time"
     :asideText="text"
     :asideRain="rain"
     :asideCity="city"
@@ -59,7 +58,6 @@ export default {
   tempC: "",
   tempF: "",
   date: "",
-  time: "",
   text: "",
   rain: "",
   city: "",
@@ -73,7 +71,6 @@ export default {
       tempC: "",
       tempF: "",
       date: "",
-      time: "",
       text: "",
       rain: "",
       city: "",
@@ -98,7 +95,6 @@ export default {
           this.tempC = res.data.current.temp_c;
           this.tempF = res.data.current.temp_f;
           this.date = res.data.current.last_updated_epoch;
-          this.time = res.data.current.last_updated.split(" ")[1];
           this.text = res.data.current.condition.text;
           this.rain = res.data.forecast.forecastday[0].day.daily_chance_of_rain;
           this.city = res.data.location.name;

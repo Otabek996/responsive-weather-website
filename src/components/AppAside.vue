@@ -36,7 +36,7 @@
             ][asideDate]
           }}</span
           >,
-          <span class="aside-text__time">{{ asideTime }}</span>
+          <span class="aside-text__time">{{ this.currentTime }}</span>
         </p>
       </div>
 
@@ -66,12 +66,31 @@ export default {
     "asideTempF",
     "usedTempValue",
     "asideDate",
-    "asideTime",
     "asideText",
     "asideRain",
     "asideCity",
     "asideCountry",
   ],
+
+  data() {
+    return {
+      currentTime: "",
+    };
+  },
+
+  mounted() {
+    this.getCurrentTime();
+    setInterval(this.getCurrentTime, 30000);
+  },
+
+  methods: {
+    getCurrentTime() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, "0");
+      const minutes = now.getMinutes().toString().padStart(2, "0");
+      this.currentTime = `${hours}:${minutes}`;
+    },
+  },
 };
 </script>
 
