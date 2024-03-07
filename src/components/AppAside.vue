@@ -11,7 +11,12 @@
           @keyup.enter="getTextFromInput"
         />
       </div>
-      <button class="find-location" type="button" @click="getTextFromInput">
+      <button
+        class="find-location"
+        type="button"
+        @click="getTextFromInput"
+        :disabled="!Boolean(inputText)"
+      >
         <i class="ri-crosshair-line"></i>
       </button>
     </div>
