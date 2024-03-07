@@ -1,20 +1,19 @@
 <template>
   <aside class="aside">
     <div class="aside-header">
-      <form class="aside-header-form">
-        <div class="input-border">
-          <i class="ri-search-line"></i>
-          <input
-            class="search-input"
-            type="text"
-            placeholder="Search for places ..."
-            v-model="inputText"
-          />
-        </div>
-        <button class="find-location" type="button" @click="getTextFromInput">
-          <i class="ri-crosshair-line"></i>
-        </button>
-      </form>
+      <div class="input-border">
+        <i class="ri-search-line"></i>
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Search for places ..."
+          v-model="inputText"
+          @keyup.enter="getTextFromInput"
+        />
+      </div>
+      <button class="find-location" type="button" @click="getTextFromInput">
+        <i class="ri-crosshair-line"></i>
+      </button>
     </div>
 
     <div class="aside-body">
@@ -114,7 +113,7 @@ export default {
   padding: 40px;
 }
 
-.aside-header-form {
+.aside-header {
   display: flex;
   align-items: center;
   gap: 10px;
