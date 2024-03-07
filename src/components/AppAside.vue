@@ -21,7 +21,7 @@
       <div class="aside-body__top">
         <img class="aside-icon" :src="asideIcon" alt="Weather icon" />
         <p class="aside-temperature" v-if="usedTempValue === '°C'">
-          {{ asideTempC }}{{ usedTempValue }}
+          {{ Math.ceil(asideTempC) }}{{ usedTempValue }}
         </p>
         <p class="aside-temperature" v-if="usedTempValue === '°F'">
           {{ Math.ceil(asideTempF) }}{{ usedTempValue }}
