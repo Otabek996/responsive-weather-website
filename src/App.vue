@@ -98,7 +98,7 @@ export default {
     getWeather() {
       axios
         .get(
-          "http://api.weatherapi.com/v1/forecast.json?key=8b684208e7b74e8592c102618231904&q=Tashkent&days=7&aqi=yes&alerts=no"
+          `http://api.weatherapi.com/v1/forecast.json?key=8b684208e7b74e8592c102618231904&q=${this.receivedInformation}&days=7&aqi=yes&alerts=no`
         )
         .then((res) => {
           this.icon = res.data.current.condition.icon;
@@ -130,6 +130,7 @@ export default {
 
     handleInformation(info) {
       this.receivedInformation = info;
+      this.getWeather();
       console.log(this.receivedInformation);
     },
   },
