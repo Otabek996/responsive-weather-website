@@ -100,8 +100,10 @@ export default {
     },
 
     getTextFromInput() {
-      this.$emit("information-event", this.inputText);
-      this.inputText = "";
+      if (this.inputText != "") {
+        this.$emit("information-event", this.inputText);
+        this.inputText = "";
+      }
     },
   },
 };
