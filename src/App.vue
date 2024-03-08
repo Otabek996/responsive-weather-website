@@ -87,6 +87,13 @@ export default {
       usedTemp: "°C",
       isActiveC: true,
       isActiveF: false,
+      uvIndex: 0,
+      windStatusKph: null,
+      sunriseTime: null,
+      sunsetTime: null,
+      humidityPercent: 0,
+      visibilityKm: 0,
+      airQualityNo2: 0,
     };
   },
 
@@ -112,7 +119,23 @@ export default {
 
           this.forecastDays = res.data.forecast.forecastday;
 
-          console.log(res);
+          this.uvIndex = res.data.current.uv;
+          this.windStatusKph = res.data.current.wind_kph;
+          this.sunriseTime = res.data.forecast.forecastday[0].astro.sunrise;
+          this.sunsetTime = res.data.forecast.forecastday[0].astro.sunset;
+          this.humidityPercent = res.data.current.humidity;
+          this.visibilityKm = res.data.current.vis_km;
+          this.airQualityNo2 = res.data.current.air_quality.no2;
+
+          console.log(
+            this.uvIndex,
+            this.windStatusKph,
+            this.sunriseTime,
+            this.sunsetTime,
+            this.humidityPercent,
+            this.visibilityKm,
+            this.airQualityNo2
+          );
         })
         .catch((error) => {
           console.log(error);
