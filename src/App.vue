@@ -113,6 +113,9 @@ export default {
           this.forecastDays = res.data.forecast.forecastday;
 
           console.log(res);
+        })
+        .catch((error) => {
+          console.log(error);
         });
     },
 
