@@ -38,9 +38,7 @@
       <h2 class="main-title">Today's Highlights</h2>
 
       <div class="box-wrapper">
-        <app-box></app-box>
-        <app-box></app-box>
-        <app-box></app-box>
+        <app-box :boxValue="Object.entries(allBoxValue)"></app-box>
       </div>
     </main>
   </div>
@@ -94,6 +92,14 @@ export default {
       humidityPercent: 0,
       visibilityKm: 0,
       airQualityNo2: 0,
+      allBoxValue: {
+        "UV Index": [""],
+        "Wind Status": [""],
+        "Sunrise & Sunset": ["", ""],
+        Humidity: [""],
+        Visibility: [""],
+        "Air Quality": [""],
+      },
     };
   },
 
@@ -127,15 +133,13 @@ export default {
           this.visibilityKm = res.data.current.vis_km;
           this.airQualityNo2 = res.data.current.air_quality.no2;
 
-          console.log(
-            this.uvIndex,
-            this.windStatusKph,
-            this.sunriseTime,
-            this.sunsetTime,
-            this.humidityPercent,
-            this.visibilityKm,
-            this.airQualityNo2
-          );
+          this.allBoxValue["UV Index"] = this.uvIndex;
+          this.allBoxValue["Wind Status"] = this.windStatusKph;
+          this.allBoxValue["Sunrise & Sunset"][0] = this.sunriseTime;
+          this.allBoxValue["Sunrise & Sunset"][1] = this.sunsetTime;
+          this.allBoxValue["Humidity"] = this.humidityPercent;
+          this.allBoxValue["Visibility"] = this.visibilityKm;
+          this.allBoxValue["Air Quality"] = this.airQualityNo2;
         })
         .catch((error) => {
           console.log(error);
