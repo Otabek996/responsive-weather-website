@@ -32,7 +32,7 @@
           :maxTempF="day.day.maxtemp_f"
           :minTempF="day.day.mintemp_f"
           :usedTempValue="usedTemp"
-          :dayIcon="day[index]"
+          :dayIcon="day.day.condition.icon"
         ></app-card>
       </div>
 
@@ -141,8 +141,6 @@ export default {
           this.allBoxValue["Humidity"] = this.humidityPercent;
           this.allBoxValue["Visibility"] = this.visibilityKm;
           this.allBoxValue["Air Quality"] = this.airQualityNo2;
-
-          console.log(res);
         })
         .catch((error) => {
           console.log(error);
