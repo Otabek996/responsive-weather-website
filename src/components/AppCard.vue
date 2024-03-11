@@ -3,7 +3,7 @@
     <p class="card-title">
       {{ ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][dayOfWeek] }}
     </p>
-    <img class="card-img" src="" alt="Sun" />
+    <img class="card-img" :src="dayIcon" alt="Sun" />
     <p class="card-temperature">
       <span v-if="usedTempValue === '°C'">
         <span class="card-temperature__morning"
@@ -34,6 +34,7 @@ export default {
     "maxTempF",
     "minTempF",
     "usedTempValue",
+    "dayIcon",
   ],
 };
 </script>
