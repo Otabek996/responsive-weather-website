@@ -94,7 +94,7 @@ export default {
       sunsetTime: null,
       humidityPercent: 0,
       visibilityKm: 0,
-      airQualityNo2: 0,
+      airQualityPm25: 0,
       allBoxValue: {
         "UV Index": [""],
         "Wind Status": [""],
@@ -135,7 +135,7 @@ export default {
           this.sunsetTime = res.data.forecast.forecastday[0].astro.sunset;
           this.humidityPercent = res.data.current.humidity;
           this.visibilityKm = res.data.current.vis_km;
-          this.airQualityNo2 = res.data.current.air_quality.no2;
+          this.airQualityPm25 = res.data.current.air_quality.pm2_5;
 
           this.allBoxValue["UV Index"] = this.uvIndex;
           this.allBoxValue["Wind Status"] = this.windStatusKph;
@@ -143,7 +143,9 @@ export default {
           this.allBoxValue["Sunrise & Sunset"][1] = this.sunsetTime;
           this.allBoxValue["Humidity"] = this.humidityPercent;
           this.allBoxValue["Visibility"] = this.visibilityKm;
-          this.allBoxValue["Air Quality"] = this.airQualityNo2;
+          this.allBoxValue["Air Quality"] = this.airQualityPm25 * 10;
+
+          console.log(res);
         })
         .catch((error) => {
           console.log(error);
