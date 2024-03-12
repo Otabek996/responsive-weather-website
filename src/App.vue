@@ -219,7 +219,7 @@ body {
   display: flex;
   background-color: var(--body-background-color-gray);
   border-radius: 40px;
-  margin: 70px;
+  margin: 50px 125px;
 }
 
 .wrapper {
