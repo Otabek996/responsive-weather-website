@@ -10,6 +10,7 @@
     :asideRain="rain"
     :asideCity="city"
     :asideCountry="country"
+    :countryTime="locationTime"
   ></app-aside>
 
   <div class="wrapper">
@@ -82,6 +83,7 @@ export default {
       rain: "",
       city: "",
       country: "",
+      locationTime: null,
       forecastDays: null,
       usedTemp: "°C",
       isActiveC: true,
@@ -123,6 +125,7 @@ export default {
           this.rain = res.data.forecast.forecastday[0].day.daily_chance_of_rain;
           this.city = res.data.location.name;
           this.country = res.data.location.country;
+          this.locationTime = res.data.location.localtime.split(" ")[1];
 
           this.forecastDays = res.data.forecast.forecastday;
 
@@ -162,7 +165,6 @@ export default {
     handleInformation(info) {
       this.receivedInformation = info;
       this.getWeather();
-      console.log(this.receivedInformation);
     },
   },
 };

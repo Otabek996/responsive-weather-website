@@ -43,7 +43,12 @@
             ][asideDate]
           }}</span
           >,
-          <span class="aside-text__time">{{ this.currentTime }}</span>
+          <span class="aside-text__time" v-if="asideCity === 'Tashkent'">{{
+            this.currentTime
+          }}</span>
+          <span class="aside-text__time" v-if="asideCity != 'Tashkent'">{{
+            countryTime
+          }}</span>
         </p>
       </div>
 
@@ -77,6 +82,7 @@ export default {
     "asideRain",
     "asideCity",
     "asideCountry",
+    "countryTime",
   ],
 
   data() {
