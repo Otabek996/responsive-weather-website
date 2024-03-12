@@ -241,8 +241,8 @@ body {
 }
 
 .box-wrapper {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
   gap: 20px;
 }
 </style>
