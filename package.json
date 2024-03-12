@@ -11,8 +11,7 @@
     "axios": "^1.6.7",
     "core-js": "^3.8.3",
     "remixicon": "^4.2.0",
-    "vue": "^3.2.13",
-    "vuetify": "^3.5.8"
+    "vue": "^3.2.13"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
