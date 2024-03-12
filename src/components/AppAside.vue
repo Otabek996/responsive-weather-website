@@ -117,9 +117,10 @@ export default {
 
 <style scoped>
 .aside {
+  width: 400px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  /* gap: 30px; */
   background-color: var(--body-background-color-white);
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
@@ -143,7 +144,7 @@ export default {
 }
 
 .input-border:hover {
-  border-color: red;
+  border-color: #d6d7da;
 }
 
 .search-input {
@@ -163,7 +164,7 @@ export default {
 }
 
 .find-location:hover {
-  border-color: red;
+  border-color: #d6d7da;
 }
 
 .aside-body__top {
@@ -171,7 +172,8 @@ export default {
   flex-direction: column;
   gap: 20px;
   border-bottom: 2px solid var(--border-color-gray);
-  padding: 20px 0;
+  /* padding: 20px 0; */
+  padding: 0 0 20px 0;
 }
 
 .aside-body__bottom {
