@@ -20,10 +20,9 @@ export default {
 .box {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 10px;
   background-color: var(--body-background-color-white);
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
 }
 </style>

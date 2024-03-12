@@ -41,13 +41,17 @@ export default {
 
 <style scoped>
 .card {
-  width: 80px;
+  width: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* gap: 10px; */
+  gap: 3px;
   background-color: var(--body-background-color-white);
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
+}
+
+.card-img {
+  width: 100%;
 }
 </style>
