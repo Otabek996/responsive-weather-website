@@ -51,6 +51,23 @@ export default {
   padding: 15px;
 }
 
+.card-title {
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  line-height: 16px;
+}
+
+.card-temperature {
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  line-height: 16px;
+}
+
+.card-temperature__evening {
+  color: var(--text-color-gray);
+  margin-left: 5px;
+}
+
 .card-img {
   width: 100%;
 }
