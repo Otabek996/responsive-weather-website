@@ -92,6 +92,7 @@ export default {
 }
 
 .sunIcon {
+  font-size: 18px;
   font-weight: var(--font-weight-regular);
 }
 </style>
