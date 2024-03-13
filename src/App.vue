@@ -229,7 +229,7 @@ body {
 }
 
 .main {
-  padding: 0 40px;
+  padding: 0 40px 40px 40px;
 }
 
 .main-title {
@@ -246,5 +246,13 @@ body {
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 20px;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 1137px) {
+  .box-wrapper {
+    grid-template-columns: repeat(2, auto);
+  }
 }
 </style>

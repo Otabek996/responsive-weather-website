@@ -116,6 +116,7 @@ export default {
 </script>
 
 <style scoped>
+/*=============== APP ASIDE ===============*/
 .aside {
   width: 400px;
   display: flex;
@@ -211,5 +212,23 @@ export default {
   font-size: 16px;
   font-weight: var(--font-weight-regular);
   line-height: 18px;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 1137px) {
+  .aside {
+    width: 330px;
+  }
+
+  .aside-footer {
+    margin-top: auto;
+  }
+}
+
+@media screen and (max-width: 1010px) {
+  .search-input {
+    width: 130px;
+  }
 }
 </style>

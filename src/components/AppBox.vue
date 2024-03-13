@@ -49,6 +49,7 @@ export default {
 </script>
 
 <style scoped>
+/*=============== APP BOX ===============*/
 .box {
   display: flex;
   flex-direction: column;
@@ -95,4 +96,7 @@ export default {
   font-size: 18px;
   font-weight: var(--font-weight-regular);
 }
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
 </style>
