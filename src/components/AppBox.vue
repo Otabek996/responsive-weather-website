@@ -21,8 +21,14 @@
       {{ value[1] }}<span class="box-description__text">km/h</span>
     </p>
     <p class="box-description sun-time" v-if="index === 2">
-      <span>{{ value[1][0] }}</span>
-      <span>{{ value[1][1] }}</span>
+      <span class="sunText">
+        <span class="sunIcon"><i class="ri-arrow-up-circle-line"></i></span>
+        <span>{{ value[1][0] }}</span>
+      </span>
+      <span class="sunText">
+        <span class="sunIcon"><i class="ri-arrow-down-circle-line"></i></span>
+        <span>{{ value[1][1] }}</span>
+      </span>
     </p>
     <p class="box-description" v-if="index === 3">
       {{ value[1] }}<span class="box-description__text">%</span>
@@ -77,5 +83,15 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.sunText {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sunIcon {
+  font-weight: var(--font-weight-regular);
 }
 </style>
