@@ -176,6 +176,16 @@ export default {
   padding: 0 0 20px 0;
 }
 
+.aside-text {
+  font-size: 21px;
+  font-weight: var(--font-weight-regular);
+  line-height: 23px;
+}
+
+.aside-text__time {
+  color: var(--text-color-gray);
+}
+
 .aside-body__bottom {
   display: flex;
   flex-direction: column;
@@ -184,13 +194,22 @@ export default {
 }
 
 .condition {
+  font-size: 16px;
+  font-weight: var(--font-weight-regular);
+  line-height: 18px;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
 }
 
 .aside-temperature {
   font-size: 80px;
   font-weight: var(--font-weight-bold);
+}
+
+.aside-city {
+  font-size: 16px;
+  font-weight: var(--font-weight-regular);
+  line-height: 18px;
 }
 </style>
