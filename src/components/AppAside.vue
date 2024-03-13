@@ -120,7 +120,7 @@ export default {
   width: 400px;
   display: flex;
   flex-direction: column;
-  /* gap: 30px; */
+  gap: 10px;
   background-color: var(--body-background-color-white);
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
