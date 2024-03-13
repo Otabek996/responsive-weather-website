@@ -98,5 +98,5 @@ export default {
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* For large devices */
+/* For medium devices */
 </style>

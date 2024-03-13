@@ -255,4 +255,21 @@ body {
     grid-template-columns: repeat(2, auto);
   }
 }
+
+@media screen and (max-width: 985px) {
+  .card-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .box-wrapper {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
+/* For medium devices */
+@media screen and (max-width: 830px) {
+  #app {
+    flex-direction: column;
+  }
+}
 </style>

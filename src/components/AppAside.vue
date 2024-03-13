@@ -231,4 +231,23 @@ export default {
     width: 130px;
   }
 }
+
+/* For medium devices */
+@media screen and (max-width: 830px) {
+  .aside {
+    width: 100%;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 0;
+  }
+
+  .input-border {
+    width: 100%;
+  }
+
+  .aside-icon {
+    width: 220px;
+    margin: 0 auto;
+  }
+}
 </style>
