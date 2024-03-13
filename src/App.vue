@@ -143,7 +143,7 @@ export default {
           this.allBoxValue["Sunrise & Sunset"][1] = this.sunsetTime;
           this.allBoxValue["Humidity"] = this.humidityPercent;
           this.allBoxValue["Visibility"] = this.visibilityKm;
-          this.allBoxValue["Air Quality"] = this.airQualityPm25 * 10;
+          this.allBoxValue["Air Quality"] = this.airQualityPm25;
 
           console.log(res);
         })
