@@ -4,9 +4,19 @@
       {{ value[0] }}
     </p>
 
-    <p class="box-description" v-if="index === 0 || index === 5">
-      {{ value[1] }}
-    </p>
+    <div v-if="index === 0">
+      <p class="box-description">
+        {{ value[1] }}
+      </p>
+      <p v-if="value[1] === 1 || value[1] === 2">Low</p>
+      <p v-if="value[1] === 3 || value[1] === 4 || value[1] === 5">Moderate</p>
+      <p v-if="value[1] === 6 || value[1] === 7">High</p>
+      <p v-if="value[1] === 8 || value[1] === 9 || value[1] === 10">
+        Very high
+      </p>
+      <p v-if="value[1] >= 11">Extreme</p>
+    </div>
+
     <p class="box-description" v-if="index === 1">
       {{ value[1] }}<span class="box-description__text">km/h</span>
     </p>
@@ -19,6 +29,9 @@
     </p>
     <p class="box-description" v-if="index === 4">
       {{ value[1] }}<span class="box-description__text">km</span>
+    </p>
+    <p class="box-description" v-if="index === 5">
+      {{ value[1] }}
     </p>
   </div>
 </template>
