@@ -272,4 +272,11 @@ body {
     flex-direction: column;
   }
 }
+
+/* For small devices */
+@media screen and (max-width: 560px) {
+  #app {
+    margin: 30px;
+  }
+}
 </style>

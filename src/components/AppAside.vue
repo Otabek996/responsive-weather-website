@@ -250,4 +250,11 @@ export default {
     margin: 0 auto;
   }
 }
+
+/* For small devices */
+@media screen and (max-width: 560px) {
+  .aside-icon {
+    width: 100%;
+  }
+}
 </style>
